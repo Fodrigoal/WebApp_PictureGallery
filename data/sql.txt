@@ -1,0 +1,115 @@
+drop table pictures;
+
+create table pictures(
+    pictures_id int(10) auto_increment primary key,
+    authors_id int(10),
+    pictures_title varchar(255),
+    pictures_filename varchar(255),
+    pictures_description text
+);
+
+drop table comments;
+
+create table comments(
+    comments_id int(10) auto_increment primary key,
+    pictures_id int(10),
+    comments_comment text
+);
+
+drop table authors;
+
+create table authors(
+    authors_id int(10) auto_increment primary key,
+    authors_firstname varchar(255),
+    authors_lastname varchar(255)
+);
+
+
+####################
+# pictures         #
+####################
+
+insert into pictures (authors_id, pictures_title, pictures_filename, pictures_description) values ('1', 'first title', '1505465478.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+
+insert into pictures (authors_id, pictures_title, pictures_filename, pictures_description) values ('1', 'second title', '1800180867.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+
+insert into pictures (authors_id, pictures_title, pictures_filename, pictures_description) values ('1', 'third title', '4961840325.jpg', ' Aliquam nec dictum nulla. Pellentesque dignissim eleifend nulla.');
+
+insert into pictures (authors_id, pictures_title, pictures_filename, pictures_description) values ('2', 'fourth title', '5065071803.jpg', 'Phasellus non eros et tellus euismod mollis, adipiscing elit.');
+
+insert into pictures (authors_id, pictures_title, pictures_filename, pictures_description) values ('3', 'fifth title', '5665772016.jpg', 'Nunc dignissim mauris sit amet vulputate sollicitudin.');
+
+insert into pictures (authors_id, pictures_title, pictures_filename, pictures_description) values (3, 'sixth title', '6214183289.jpg', 'Vivamus eget mi odio, consectetur.');
+
+insert into pictures (authors_id, pictures_title, pictures_filename, pictures_description) values (2, 'seventh title', '6563995309.jpg', 'Fusce rhoncus hendrerit odio, ac egestas erat imperdiet.');
+
+insert into pictures (authors_id, pictures_title, pictures_filename, pictures_description) values (2, 'eighth title', '6897469293.jpg', ' Aliquam viverra nibh a eleifend lacinia. Phasellus vitae venenatis leo. Nullam iaculis fringilla massa vel pharetra.');
+
+insert into pictures (authors_id, pictures_title, pictures_filename, pictures_description) values (3, 'ninth title', '7787767022.jpg', 'Nullam volutpat, odio non vulputate maximus, enim metus tincidunt dui');
+
+insert into pictures (authors_id, pictures_title, pictures_filename, pictures_description) values (null, 'tenth title', '9191892931.jpg', 'Nulla eget nisi lacus');
+
+insert into pictures (authors_id, pictures_title, pictures_filename, pictures_description) values (null, 'eleventh title', '9655789441.jpg', 'Nullam erat orci, tempus ac egestas sed, sagittis eget augue. Integer elementum massa felis, vitae tristique mauris accumsan in.');
+
+####################
+# authors          #
+####################
+insert into authors (authors_firstname, authors_lastname) values ('Gary', 'Tong');
+
+insert into authors (authors_firstname, authors_lastname) values ('Jane', 'Doe');
+
+insert into authors (authors_firstname, authors_lastname) values ('John', 'Smith');
+
+####################
+# comments          #
+####################
+insert into comments (pictures_id, comments_comment) values ('1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec dictum nulla. Pellentesque dignissim eleifend nulla ac ornare. Phasellus a justo orci.');
+
+insert into comments (pictures_id, comments_comment) values ('1', 'Ut nisi ante, luctus eget sagittis id, accumsan ac sapien. Phasellus non eros et tellus euismod mollis. Pellentesque a tellus quis velit congue feugiat. Cras mollis metus eu tincidunt venenatis. Aliquam pharetra ligula ut feugiat ultricies.');
+
+insert into comments (pictures_id, comments_comment) values ('1', 'Phasellus vel orci nulla. Nunc dignissim mauris sit amet vulputate sollicitudin.');
+
+insert into comments (pictures_id, comments_comment) values ('2', 'Fusce dapibus mi metus, vel rhoncus dui placerat et. Vivamus eget mi odio. Etiam sit amet velit ultricies, porttitor eros et, volutpat tortor. Nam diam dui, pellentesque ut neque quis, luctus egestas arcu. Sed lacinia est id mauris maximus, in mollis purus commodo. Donec sagittis ipsum sed augue commodo interdum. Vestibulum id est ex. Curabitur pharetra nulla vel dui scelerisque pharetra. Sed tincidunt tristique enim, sit amet fermentum tellus vulputate in. Nullam eget dignissim nisl. Nam suscipit et elit vel lobortis.');
+
+insert into comments (pictures_id, comments_comment) values ('3', 'Vivamus eget mi odio. Etiam sit amet velit ultricies, porttitor eros et, volutpat tortor. Nam diam dui, pellentesque ut neque quis, luctus egestas arcu. Sed lacinia est id mauris maximus, in mollis purus commodo. Donec sagittis ipsum sed augue commodo interdum. Vestibulum id est ex. Curabitur pharetra nulla vel dui scelerisque pharetra. Sed tincidunt tristique enim, sit amet fermentum tellus vulputate in. Nullam eget dignissim nisl. Nam suscipit et elit vel lobortis.');
+
+insert into comments (pictures_id, comments_comment) values ('3', 'Aliquam viverra ullamcorper sapien. Vivamus mauris diam, volutpat sed maximus ut, consectetur ut est. Morbi egestas finibus ipsum, ac ullamcorper sapien suscipit et. Nullam volutpat, odio non vulputate maximus, enim metus tincidunt dui, ut tempor ipsum urna non augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin vel egestas arcu. Ut orci dui, iaculis eu erat vel, elementum convallis magna. Pellentesque ultricies venenatis fermentum. Maecenas suscipit, ipsum at consequat finibus, sapien est aliquet diam, eu convallis nisl nulla ac nunc. Nulla eget nisi lacus.');
+
+insert into comments (pictures_id, comments_comment) values ('3', 'Proin interdum lectus sit amet lacus pulvinar mattis.');
+
+insert into comments (pictures_id, comments_comment) values ('3', 'Maecenas suscipit, ipsum at consequat finibus, sapien est aliquet diam, eu convallis nisl nulla ac nunc. Nulla eget nisi lacus.');
+
+insert into comments (pictures_id, comments_comment) values ('3', 'Pellentesque nec tincidunt lorem. Etiam ultrices neque a accumsan iaculis. Ut est lorem, faucibus luctus feugiat id, cursus a mi. ');
+
+insert into comments (pictures_id, comments_comment) values ('4', 'Proin interdum lectus sit amet lacus pulvinar mattis. ');
+
+insert into comments (pictures_id, comments_comment) values ('4', 'Morbi dapibus semper ex, quis elementum lectus ultrices vel. ');
+
+insert into comments (pictures_id, comments_comment) values ('4', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit');
+
+insert into comments (pictures_id, comments_comment) values ('5', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit');
+
+insert into comments (pictures_id, comments_comment) values ('5', 'Fusce rhoncus hendrerit odio, ac egestas erat imperdiet sit amet. Aliquam viverra nibh a eleifend lacinia. Phasellus vitae venenatis leo. Nullam iaculis fringilla massa vel pharetra.');
+
+insert into comments (pictures_id, comments_comment) values ('5', 'Ac egestas erat imperdiet sit amet. Aliquam viverra nibh a eleifend iaculis fringilla massa vel pharetra.');
+
+insert into comments (pictures_id, comments_comment) values ('5', 'Proin interdum lectus sit amet lacus pulvinar mattis. Mauris non ultrices libero. Integer id quam nunc. Aliquam pharetra est egestas sapien placerat, et auctor ex laoreet. Donec condimentum, magna eget sollicitudin finibus, sapien ante eleifend nulla, quis finibus velit felis malesuada lectus. Donec nibh metus, mattis in molestie sit amet, dapibus ut tortor. Aliquam malesuada metus orci, id fringilla erat facilisis dictum. Morbi malesuada neque a metus imperdiet, et aliquet felis elementum. Curabitur augue ligula, interdum vel dignissim non, semper in neque. Nullam erat orci, tempus ac egestas sed, sagittis eget augue. Integer elementum massa felis, vitae tristique mauris accumsan in. Praesent pulvinar odio augue, a rhoncus urna pulvinar ac.');
+
+insert into comments (pictures_id, comments_comment) values ('6', 'Vivamus eget mi odio. Etiam sit amet velit ultricies, porttitor eros et, volutpat tortor. Nam diam dui, pellentesque ut neque quis, luctus egestas arcu. Sed lacinia est id mauris maximus, in mollis purus commodo. Donec sagittis ipsum sed augue commodo interdum. Vestibulum id est ex. Curabitur pharetra nulla vel dui scelerisque pharetra. Sed tincidunt tristique enim, sit amet fermentum tellus vulputate in. Nullam eget dignissim nisl. Nam suscipit et elit vel lobortis.');
+
+insert into comments (pictures_id, comments_comment) values ('6', 'Aliquam viverra ullamcorper sapien. Vivamus mauris diam, volutpat sed maximus ut, consectetur ut est. Morbi egestas finibus ipsum, ac ullamcorper sapien suscipit et. Nullam volutpat, odio non vulputate maximus, enim metus tincidunt dui, ut tempor ipsum urna non augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin vel egestas arcu. Ut orci dui, iaculis eu erat vel, elementum convallis magna. Pellentesque ultricies venenatis fermentum. Maecenas suscipit, ipsum at consequat finibus, sapien est aliquet diam, eu convallis nisl nulla ac nunc. Nulla eget nisi lacus.');
+
+insert into comments (pictures_id, comments_comment) values ('6', 'Proin interdum lectus sit amet lacus pulvinar mattis. ');
+
+insert into comments (pictures_id, comments_comment) values ('6', 'Maecenas suscipit, ipsum at consequat finibus, sapien est aliquet diam, eu convallis nisl nulla ac nunc. Nulla eget nisi lacus.');
+
+insert into comments (pictures_id, comments_comment) values ('6', 'Pellentesque nec tincidunt lorem. Etiam ultrices neque a accumsan iaculis. Ut est lorem, faucibus luctus feugiat id, cursus a mi.');
+
+insert into comments (pictures_id, comments_comment) values ('7', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec dictum nulla. Pellentesque dignissim eleifend nulla ac ornare. Phasellus a justo orci.');
+
+insert into comments (pictures_id, comments_comment) values ('7', 'Ut nisi ante, luctus eget sagittis id, accumsan ac sapien. Phasellus non eros et tellus euismod mollis. Pellentesque a tellus quis velit congue feugiat. Cras mollis metus eu tincidunt venenatis. Aliquam pharetra ligula ut feugiat ultricies.');
+
+insert into comments (pictures_id, comments_comment) values ('7', 'Phasellus vel orci nulla. Nunc dignissim mauris sit amet vulputate sollicitudin.');
+
+
+
